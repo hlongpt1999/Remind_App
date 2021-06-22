@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Remind-App</string>
+    <string name="title_remind">Remind</string>
+    <string name="title_note">Note</string>
+    <string name="title_setting">Setting</string>
+</resources>
+
