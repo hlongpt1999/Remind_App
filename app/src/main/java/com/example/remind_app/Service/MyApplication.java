@@ -4,18 +4,42 @@ import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.IBinder;
+
+import com.example.remind_app.R;
+import com.example.remind_app.Song;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 //Lớp để chạy Foreground Service trong android
 public class MyApplication extends Application {
 
     public static final String CHANNEL_ID = "CHANNEL_MUSIC" ;
+    private MyService myService;
+    private Boolean isServiceConnected;
 
-    /*Hệ thống gọi phương thức này khi Service được khởi tạo,
-         và nó chỉ chạy một lần trước khi onStartCommand() hoặc onBind() được gọi.
-         Nếu Service đã chạy thì phương thức này không được gọi lại lần nào nữa.
-         */
+    private ServiceConnection mServiceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            MyService.MyBinder myBinder = (MyService.MyBinder) iBinder;
+            myService = myBinder.getMyService();
+            isServiceConnected = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            myService=null;
+            isServiceConnected=false;
+        }
+    };
+
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -34,5 +58,27 @@ public class MyApplication extends Application {
         }
     }
 
+    private void StartService(){
+        Intent intent = new Intent(this, MyService.class);
+        Song song = new Song("Music", R.raw.app);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("1Song",song);
+        intent.putExtras(bundle);
+        startService(intent);
 
+        bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
+    }
+
+    private void StopForegoundService(){
+        Intent intent = new Intent(this, MyService.class);
+
+        stopService(intent);
+    }
+
+    private void StopBoundService(){
+        if (isServiceConnected){
+            unbindService(mServiceConnection);
+            isServiceConnected =false;
+        }
+    }
 }

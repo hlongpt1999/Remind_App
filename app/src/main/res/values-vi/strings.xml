@@ -6,5 +6,6 @@
     <string name="button_note">Ghi chú</string>
     <string name="button_move">Chuyển</string>
     <string name="button_play">Phát</string>
+    <string name="button_stop">Dừng phát</string>
 </resources>
 

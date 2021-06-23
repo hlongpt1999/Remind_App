@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
     <TextView
         android:id="@+id/text_remind"
@@ -19,6 +27,40 @@
         android:text="@string/button_play"
         android:textSize="@dimen/button_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnStop"
+            android:text="@string/button_stop"
+            android:textSize="@dimen/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutMusic"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_high"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/txtMusicName"
+            android:text="@string/app_name"
+            android:textSize="@dimen/medium_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/imgPlayMusic"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/imgPlayMusic"
+            android:layout_width="@dimen/height_medium"
+            android:layout_height="@dimen/height_medium"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icon_pause"/>
+
+
+    </RelativeLayout>
+</RelativeLayout>
