@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,6 +56,7 @@ public class Adapter_Note extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         Note note = listNote.get(position);
+//        Picasso.get().load(String.valueOf(note.image)).into(((ViewHolder) holder).imgItem);
         ((ViewHolder) holder).txtItemContent.setText(note.content);
         ((ViewHolder) holder).txtItemDetail.setText(note.detail);
     }

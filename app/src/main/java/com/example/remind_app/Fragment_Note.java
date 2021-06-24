@@ -2,12 +2,20 @@ package com.example.remind_app;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,7 +28,9 @@ import com.example.remind_app.Adapter.Adapter_Note;
 import com.example.remind_app.Objects.Note;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+
 
 public class Fragment_Note extends Fragment {
     Button btnNote;
@@ -66,6 +76,7 @@ public class Fragment_Note extends Fragment {
                 add_Dialog = new Dialog(getActivity());
                 add_Dialog.setContentView(R.layout.dialog_note_add);
 
+                ImageView img_inDialog = add_Dialog.findViewById(R.id.img_inDialog);
                 EditText editItemContent = add_Dialog.findViewById(R.id.editItemContent);
                 EditText editItemDetail = add_Dialog.findViewById(R.id.editItemDetail);
                 Button btnAdd_inDialog = add_Dialog.findViewById(R.id.btnAdd_inDialog);
@@ -73,16 +84,28 @@ public class Fragment_Note extends Fragment {
                 btnAdd_inDialog.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        arrayList.add(new Note("",
+
+
+                        arrayList.add(new Note(null,
                                 editItemContent.getText().toString(),
                                 editItemDetail.getText().toString()));
                         Toast.makeText(getActivity(), "Đã thêm thành công", Toast.LENGTH_SHORT).show();
                         add_Dialog.dismiss();
                         adapter_note.notifyDataSetChanged();
-
-
                     }
                 });
+
+//                img_inDialog.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+//                        startActivityForResult(intent, 1);
+//                        img_inDialog.setImageURI(intent.getData());
+//                        Drawable drawable =  imageView.getDrawable();
+//                        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+//                    }
+//                });
+
 
                 add_Dialog.show();
             }

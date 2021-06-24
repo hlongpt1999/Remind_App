@@ -1,24 +1,26 @@
 package com.example.remind_app.Objects;
 
+import android.graphics.Bitmap;
+
 public class Note {
-    public String image;
+    Bitmap image;
     public String content;
     public String detail;
 
     public Note() {
     }
 
-    public Note(String image, String content, String detail) {
+    public Note(Bitmap image, String content, String detail) {
         this.image = image;
         this.content = content;
         this.detail = detail;
     }
 
-    public String getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 
