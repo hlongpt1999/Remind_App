@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center">
 
-    <TextView
-        android:layout_gravity="center"
-        android:text="@string/title_note"
-        android:textSize="@dimen/huge_text"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_Note"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
-    <Button
-        android:id="@+id/btnNote"
-        android:text="@string/button_note"
-        android:textSize="@dimen/button_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
-</LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_add"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHor"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVer"
+        app:layout_constraintTop_toTopOf="@id/guidelineHor" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

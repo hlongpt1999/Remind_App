@@ -34,13 +34,16 @@
             android:text="@string/button_stop"
             android:textSize="@dimen/button_text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="invisible"/>
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/layoutMusic"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_high"
+        android:background="@color/purple_200"
         android:layout_alignParentBottom="true">
 
         <TextView
@@ -51,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/imgPlayMusic"
             android:layout_marginEnd="10dp"
+            android:layout_marginStart="@dimen/padding"
             android:layout_centerVertical="true"/>
 
         <ImageView

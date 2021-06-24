@@ -63,6 +63,9 @@ public class Fragment_Remind extends Fragment {
             public void onClick(View view) {
 //                sendNotificationMedia();
                     appStartService();
+                    layoutMusic.setVisibility(View.VISIBLE);
+                    btnStop.setVisibility(View.VISIBLE);
+                    btnPlay.setVisibility(View.INVISIBLE);
                 }
         });
     }
@@ -73,6 +76,9 @@ public class Fragment_Remind extends Fragment {
             public void onClick(View view) {
                 myService.pauseMusic();
                 appStopService();
+                layoutMusic.setVisibility(View.INVISIBLE);
+                btnStop.setVisibility(View.INVISIBLE);
+                btnPlay.setVisibility(View.VISIBLE);
             }
         });
     }

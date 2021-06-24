@@ -7,5 +7,9 @@
     <string name="button_move">Chuyển</string>
     <string name="button_play">Phát</string>
     <string name="button_stop">Dừng phát</string>
+    <string name="button_add">Thêm</string>
+
+    <string name="hint_note_dialog_content">Nhập nội dung</string>
+    <string name="hint_note_dialog_detail">Nhập chi tiết</string>
 </resources>
 
