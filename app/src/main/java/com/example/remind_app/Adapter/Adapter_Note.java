@@ -63,7 +63,9 @@ public class Adapter_Note extends RecyclerView.Adapter {
 
     //Số phần tử của dữ liệu
     @Override
-    public int getItemCount() {
+        public int getItemCount() {
         return listNote.size();
     }
+
+    
 }

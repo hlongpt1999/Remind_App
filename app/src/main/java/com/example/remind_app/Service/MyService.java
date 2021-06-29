@@ -24,6 +24,8 @@ public class MyService extends Service {
 
     private MediaPlayer mediaPlayer;
     private boolean isPlaying = false;
+
+
     private MyBinder myBinder = new MyBinder();
 
     public class MyBinder extends Binder{
@@ -31,7 +33,6 @@ public class MyService extends Service {
             return MyService.this;
         }
     }
-
 
     /*Triển khai phương thức này là cung cấp một giao diện để client
     có thể giao tiếp với Service thông qua một đối tượng IBinder do Service trả về.
@@ -58,8 +59,6 @@ public class MyService extends Service {
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-//        return super.onStartCommand(intent, flags, startId);
-
         Bundle bundle=intent.getExtras();
         if(bundle!=null){
             Song song = (Song) bundle.get("1Song");

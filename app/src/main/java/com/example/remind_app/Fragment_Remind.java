@@ -99,7 +99,7 @@ public class Fragment_Remind extends Fragment {
         });
     }
 
-    private void sendNotificationMedia() {
+   /* private void sendNotificationMedia() {
         MediaSessionCompat mediaSessionCompat = new MediaSessionCompat(getActivity(), "tag");
 
         Notification notification = new NotificationCompat.Builder(getActivity(), CHANNEL_ID)
@@ -116,7 +116,7 @@ public class Fragment_Remind extends Fragment {
 
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(getActivity());
         managerCompat.notify(1, notification);
-    }
+    }*/
 
 
     public static final String CHANNEL_ID = "CHANNEL_MUSIC" ;
