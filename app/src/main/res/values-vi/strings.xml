@@ -3,6 +3,8 @@
     <string name="title_remind">Nhắc nhở</string>
     <string name="title_note">Ghi chú</string>
     <string name="title_setting">Cài đặt</string>
+    <string name="title_login">Đăng nhập</string>
+
     <string name="button_note">Ghi chú</string>
     <string name="button_move">Chuyển</string>
     <string name="button_play">Phát</string>

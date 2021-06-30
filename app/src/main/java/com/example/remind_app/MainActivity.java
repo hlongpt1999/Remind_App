@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new Fragment_Note();
                         break;
                     case R.id.navigation_setting:
-                        fragment = new Fragment_Setting_Kotlin();
+                        fragment = new Fragment_Setting();
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, fragment).commit();
