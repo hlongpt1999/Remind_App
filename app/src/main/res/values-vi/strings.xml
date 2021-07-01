@@ -13,5 +13,8 @@
 
     <string name="hint_note_dialog_content">Nhập nội dung</string>
     <string name="hint_note_dialog_detail">Nhập chi tiết</string>
+    <string name="hint_user_name">Nhập tên đăng nhập</string>
+    <string name="hint_password">Nhập mật khẩu</string>
+    <string name="button_login">Đăng nhập</string>
 </resources>
 
