@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Remind_App">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".UsersActiviy"></activity>
+        <activity android:name=".MainActivity" />
 
         <service android:name=".Service.MyService" />
 

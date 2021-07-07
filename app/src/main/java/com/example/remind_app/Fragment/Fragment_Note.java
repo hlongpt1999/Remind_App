@@ -1,4 +1,4 @@
-package com.example.remind_app;
+package com.example.remind_app.Fragment;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.remind_app.Adapter.Adapter_Note;
 import com.example.remind_app.Objects.Note;
+import com.example.remind_app.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.ByteArrayOutputStream;

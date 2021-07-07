@@ -1,4 +1,4 @@
-package com.example.remind_app;
+package com.example.remind_app.Fragment;
 
 import android.app.Notification;
 import android.content.ComponentName;
@@ -24,7 +24,9 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.remind_app.R;
 import com.example.remind_app.Service.MyService;
+import com.example.remind_app.Song;
 
 import static com.example.remind_app.Service.MyApplication.CHANNEL_ID;
 

@@ -1,10 +1,12 @@
-package com.example.remind_app
+package com.example.remind_app.Fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.remind_app.MainActivity
+import com.example.remind_app.R
 
 class Fragment_Note_Kotlin : Fragment() {
     val activity : MainActivity = MainActivity()

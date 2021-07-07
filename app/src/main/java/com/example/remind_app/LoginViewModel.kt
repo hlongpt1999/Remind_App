@@ -1,5 +1,7 @@
 package com.example.remind_app
 
+import android.content.Context
+import android.content.Intent
 import android.view.View
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -8,7 +10,7 @@ import com.example.remind_app.Objects.User
 
 //VIEWMODEL in MVVM design pattern
 public class LoginViewModel : BaseObservable(){
-        
+
     var messageLogin: ObservableField<String> = ObservableField<String>()
     var isShowMessage: ObservableField<Boolean> = ObservableField<Boolean>(false)
 
@@ -31,12 +33,11 @@ public class LoginViewModel : BaseObservable(){
     fun onClickLogin(view :View ){
         var user = User(username, password)
 
-        if (username.equals("admin") && password.equals("admin")) {
-//            var context: Context = view.context
-//            var intent = Intent(context, MainActivity::class.java)
-//            context.startActivity(intent)
-
+        if (user.username.equals("admin") && user.password.equals("admin")) {
+            var context: Context = view.context
+            var intent = Intent(context, MainActivity::class.java)
             isShowMessage.set(false)
+            context.startActivity(intent)
         }
         else {
             messageLogin.set ("wrong")
@@ -48,4 +49,10 @@ public class LoginViewModel : BaseObservable(){
         isShowMessage.set(false)
     }
 
+    fun onClickNewActivity(view : View){
+        var context: Context = view.context
+        var intent = Intent(context, UsersActiviy::class.java)
+        isShowMessage.set(false)
+        context.startActivity(intent)
+    }
 }

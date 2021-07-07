@@ -16,6 +16,9 @@
     <string name="hint_user_name">Enter your Username</string>
     <string name="hint_password">Enter password</string>
     <string name="button_login">Login</string>
+    <string name="button_new_activity">New Activity</string>
+    <string name="hint_input_name">Enter the name</string>
+    <string name="hint_input_email">Enter the email</string>
 
 </resources>
 

@@ -1,4 +1,4 @@
-package com.example.remind_app;
+package com.example.remind_app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.remind_app.MainActivity2;
+import com.example.remind_app.R;
 
 public class Fragment_Setting extends Fragment {
     @Nullable

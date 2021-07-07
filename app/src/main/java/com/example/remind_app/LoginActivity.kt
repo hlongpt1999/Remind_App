@@ -18,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
 
         var login : ActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         var loginViewModel = LoginViewModel()
-        login.loginViewModel = loginViewModel
+        login.loginViewModel= loginViewModel
 
 //        btnLogin.setOnClickListener(object : View.OnClickListener{
 //            override fun onClick(p0: View?) {
